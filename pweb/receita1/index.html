@@ -5,21 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Básico</title>
     <style>
-    table, th, td {
-        border: 1px solid black;
+        * {
+            box-sizing: border-box;
         }
-    table, th, td {
-        background-color: rgb(134, 134, 216);
-    }
-    table {
-        font-size: 12px;
-        font-family: Arial;
-        text-align: center;
-    }
-    table {
-        width: 200px;
-        height: 100px;
-    }
+        .row {
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+        .column {
+            float: left;
+            width: 35%;
+            padding: 5px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            text-align: left;
+            padding: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -32,40 +51,43 @@
         E o futuro nada diz!<br/>
     </p>
     <br>
-    <table>
-        <tr>
-            <th>Bebida</th>
-            <th>Preço</th>
-        </tr>
-        <tr>
-            <td><a href="https://www.heineken.com/br/pt-br/" target="_blank"><img src="https://www.heineken.com/br/pt-br/themes/heineken/img/logo_heineken.png" alt="Heineken"></a></td>
-            <td>R$ 4,49</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.brahma.com.br/" target="_blank"><img src="https://www.brahma.com.br/images/brahma_logo_header.png" alt="Brahma"></a></td>
-            <td>R$ 2,76</td>
-        </tr>
-    </table>
-    <br/>
-    <table>
-        <tr>
-            <th>Lanches</th>
-            <th>Preço</th>
-        </tr>
-        <tr>
-            <td><a href="https://www.mcdonalds.com.br/" target="_blank"><img src="https://www.mcdonalds.com.br/images/header/logo.png" alt="McDonald's"></a></td>
-            <td>R$ 8,00</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.burgerking.com.br/" target="_blank"><img src="https://www.burgerking.com.br/images/header/logo.png" alt="Burger King"></a></td>
-            <td>R$ 10,00</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.subway.com.br/" target="_blank"><img src="https://www.subway.com.br/images/header/logo.png" alt="Subway"></a></td>
-            <td>R$ 15,00</td>
-        </tr>
-    </table>
-    <br/>
+    <div class="row">
+        <div class="column">
+            <table>
+                <tr>
+                    <th>Bebida</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td><a href="https://www.heineken.com/br/pt-br/" target="_blank"><img src="https://www.heineken.com/br/pt-br/themes/heineken/img/logo_heineken.png" alt="Heineken"></a></td>
+                    <td>R$ 4,49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.brahma.com.br/" target="_blank"><img src="https://www.brahma.com.br/images/brahma_logo_header.png" alt="Brahma"></a></td>
+                    <td>R$ 2,76</td>
+                </tr>
+            </table>
+            <br/>
+        </div>
+        <div class="column">
+            <table>
+                <tr>
+                    <th>Lanches</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td><a href="https://www.mcdonalds.com.br/" target="_blank"><img src="https://www.mcdonalds.com.br/images/header/logo.png" alt="McDonald's"></a></td>
+                    <td>R$ 8,00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.burgerking.com.br/" target="_blank"><img src="https://www.burgerking.com.br/images/header/logo.png" alt="Burger King"></a></td>
+                    <td>R$ 10,00</td>
+                </tr>
+            </table>
+            <br/>
+        </div>
+    </div>
+    
     <p>Autor:Francisco Borges!
 </body>
 </html>

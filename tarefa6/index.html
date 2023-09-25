@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="work.js"></script>
+    <title>Tarefa 6</title>
+</head>
+<body>
+    <div><button id="botaoCarregar">Carregando veículos...</button></div>
+    <div id="itensDiv"></div>   
+</body>
+<script>
+    let veiculos = []
+    async function carregarVeiculos(){
+        const div = document.getElementById("itensDiv")
+        try{
+            let res = await fetch("https://random-data-api.com/api/vehicle/random_vehicle?size=3")
+            veiculos = await res.json()
+            carregarDiv(veiculos, div)
+        }catch(err){
+            document.getElementById("veiculosDiv").innerHTML = "Fudeu..."
+        }
+    }
+    let botao = document.getElementById("botaoCarregar")
+    botao.addEventListener("click", () => carregarVeiculos() )                  
+</script>
+</html>
